@@ -33,6 +33,8 @@
 
 @author: Avishek Arora
 """
+from math import sqrt
+
 def BruteForcePrime(n):
 	"""Returns True if n is a prime number
 	   Applies simple brute-force algorithm.
@@ -45,3 +47,23 @@ def BruteForcePrime(n):
 		return True
 	else:
 		return False
+
+def SeiveOfEratosthenes(n):
+	"""Prints Primes between 2 to n
+	   Take advantage of seive of eratosthenes algorithm
+	   n:	upper bound starting from 2 to n
+	"""
+	primes = []
+	for x in range(0,n):
+		primes.append(True)
+
+	for x in range(2,int(sqrt(n))):
+		if primes[x] == True:
+			for i in range(x*x,n,x):
+				primes[i] = False
+	for x in range(2,n):
+		if primes[x] == True:
+			print(x),
+
+
+		
