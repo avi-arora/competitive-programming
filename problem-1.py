@@ -48,9 +48,9 @@ def BruteForcePrime(n):
 	else:
 		return False
 
-def SeiveOfEratosthenes(n):
+def SieveOfEratosthenes(n):
 	"""Prints Primes between 2 to n
-	   Take advantage of seive of eratosthenes algorithm
+	   Take advantage of sieve of eratosthenes algorithm
 	   n:	upper bound starting from 2 to n
 	"""
 	primes = []
@@ -63,7 +63,27 @@ def SeiveOfEratosthenes(n):
 	for i in range(0,n-2):
 		if primes[i] == True:
 			print(i+2),
+	return primes
 
+def SegmentedSieveOfEratosthenes(start, end):
+	"""Prints Prime between start to end
+	   Uses Segmented sieve algorithm
+	   start: lower bound >= 1, 
+	   end:   upper bound <= 10^9
+	   TC: O(n log log n),
+	   SC: sqrt(n)
+	"""
+	primes = []
+	for x in range(0,int(sqrt(n))):
+		primes.append(True)
+	#find the primes using Sieve of eratosthenes upto sqrt(n)
+	segment_size = int(sqrt(n)) + 1
+	primes = SieveOfEratosthenes(segment_size)
+	#divide the range in different segments
+	
+
+
+	
 
 
 		
