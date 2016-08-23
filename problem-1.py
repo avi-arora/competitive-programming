@@ -56,14 +56,14 @@ def SeiveOfEratosthenes(n):
 	primes = []
 	for x in range(0,n):
 		primes.append(True)
+	for i in range(0,int(sqrt(n))):
+			if primes[i] == True:
+					for j in range((i+2)**2,n,(i+2)): #Using Formulae for crossing non-primes i.e i^2, i^2+i, i^2+2i, ... n
+							primes[j-2] = False #j-2 because starting memory from 0, hence saving two blocks of memeory locations.
+	for i in range(0,n-2):
+		if primes[i] == True:
+			print(i+2),
 
-	for x in range(2,int(sqrt(n))):
-		if primes[x] == True:
-			for i in range(x*x,n,x):
-				primes[i] = False
-	for x in range(2,n):
-		if primes[x] == True:
-			print(x),
 
 
 		
