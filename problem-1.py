@@ -80,7 +80,18 @@ def SegmentedSieveOfEratosthenes(start, end):
 	segment_size = int(sqrt(n)) + 1
 	primes = SieveOfEratosthenes(segment_size)
 	#divide the range in different segments
-	
+	# i choose a segment size of sqrt(n),
+	#for optimal performance, choose segment size == L1Data cache size of your system
+	lower_segment = segment_size
+	higher_segment = 2 * segment_size
+
+	#create space to compute primes for the current segment and populate with True
+	current_primes = [True] * segment_size + 1
+	#while all segments of range[0, n-1] are not processed 
+	#process one segment at a time
+	while lower < n:
+		
+		
 
 
 	
