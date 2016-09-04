@@ -58,10 +58,7 @@ def SieveOfEratosthenes(n):
 			if numbers[i] == True:
 					for j in range((i+2)**2,n,(i+2)): #Using Formulae for crossing non-primes i.e i^2, i^2+i, i^2+2i, ... n
 							numbers[j-2] = False #j-2 because starting memory from 0, hence saving two blocks of memeory locations.
-	primes = []
-	for i in range(0,n-2):
-		if numbers[i] == True:
-			primes.append(i+2)
+	primes = [i+2 for i in range(0,n-2) if numbers[i] == True]
 	return primes 
 
 def SegmentedSOE(start, end):
