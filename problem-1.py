@@ -49,21 +49,20 @@ def BruteForcePrime(n):
 		return False
 
 def SieveOfEratosthenes(n):
-	"""Prints Primes between 2 to n
+	"""Returns list of Primes between 2 to n
 	   Take advantage of sieve of eratosthenes algorithm
 	   n:	upper bound starting from 2 to n
 	"""
-	primes = []
-	for x in range(0,n):
-		primes.append(True)
+	numbers = [True] * n
 	for i in range(0,int(sqrt(n))):
-			if primes[i] == True:
+			if numbers[i] == True:
 					for j in range((i+2)**2,n,(i+2)): #Using Formulae for crossing non-primes i.e i^2, i^2+i, i^2+2i, ... n
-							primes[j-2] = False #j-2 because starting memory from 0, hence saving two blocks of memeory locations.
+							numbers[j-2] = False #j-2 because starting memory from 0, hence saving two blocks of memeory locations.
+	primes = []
 	for i in range(0,n-2):
-		if primes[i] == True:
-			print(i+2),
-	return primes
+		if numbers[i] == True:
+			primes.append(i+2)
+	return primes 
 
 def SegmentedSieveOfEratosthenes(start, end):
 	"""Prints Prime between start to end
@@ -74,22 +73,6 @@ def SegmentedSieveOfEratosthenes(start, end):
 	   SC: sqrt(n)
 	"""
 	primes = []
-	for x in range(0,int(sqrt(n))):
-		primes.append(True)
-	#find the primes using Sieve of eratosthenes upto sqrt(n)
-	segment_size = int(sqrt(n)) + 1
-	primes = SieveOfEratosthenes(segment_size)
-	#divide the range in different segments
-	# i choose a segment size of sqrt(n),
-	#for optimal performance, choose segment size == L1Data cache size of your system
-	lower_segment = segment_size
-	higher_segment = 2 * segment_size
-
-	#create space to compute primes for the current segment and populate with True
-	current_primes = [True] * segment_size + 1
-	#while all segments of range[0, n-1] are not processed 
-	#process one segment at a time
-	while lower < n:
 		
 		
 
