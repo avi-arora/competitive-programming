@@ -64,17 +64,27 @@ def SieveOfEratosthenes(n):
 			primes.append(i+2)
 	return primes 
 
-def SegmentedSieveOfEratosthenes(start, end):
-	"""Prints Prime between start to end
+def SegmentedSOE(start, end):
+	"""Returns a list of Primes between start to end
 	   Uses Segmented sieve algorithm
 	   start: lower bound >= 1, 
 	   end:   upper bound <= 10^9
 	   TC: O(n log log n),
 	   SC: sqrt(n)
 	"""
-	primes = []
-		
-		
+	#Get the primes till sqrt(end) + 1 using SOE
+	primes = SieveOfEratosthenes(int(sqrt(end)) + 1)
+	segment = [True] * (end - start)
+	composite = 0
+	for prime in primes:
+		#compute value from where we start crossing non-primes.
+		composite = (start // prime) * prime
+		#cross of every non-prime starting from composite
+		for distance in [p for p in range(composite - start, end - start, prime) if p >= 0]:
+		 	if segment[distance] == True:
+		 	 	segment[distance] = False # mark off non-primes to false
+	primes = [i+start for i in range(0,end - start) if segment[i] == True]
+	return primes		
 
 
 	
