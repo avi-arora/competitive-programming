@@ -81,7 +81,23 @@ def SegmentedSOE(start, end):
 		 	if segment[distance] == True:
 		 	 	segment[distance] = False # mark off non-primes to false
 	primes = [i+start for i in range(0,end - start) if segment[i] == True]
-	return primes		
+	return primes	
+def print_primes(start, end):
+	"""Prints primes between start to end
+	   uses SOE and segmented SOE
+	   start: lower bound >= 1
+	   end: upper bound <= 10^9
+	"""
+	primes = []
+		
+def run():
+		testcases = input()
+		assert testcases <= 10, "No: of test cases must be <= 10"
+		inputs = []
+		for i in range(0,testcases):
+			inputs += [map(int, raw_input().split())]
+				
+
 
 
 	
