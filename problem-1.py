@@ -63,7 +63,7 @@ def SieveOfEratosthenes(n):
 	return primes 
 
 def SegmentedSOE(start, end):
-	"""Returns a list of Primes between start to end
+	"""Prints list of Primes between start to end
 	   Uses Segmented sieve algorithm
 	   start: lower bound >= 1, 
 	   end:   upper bound <= 10^9
@@ -72,14 +72,32 @@ def SegmentedSOE(start, end):
 	"""
 	#Get the primes till sqrt(end) + 1 using SOE
 	segment_size = int(sqrt(end))
-	primes = SieveOfEratosthenes(segment_size + 1)
+	primes = SieveOfEratosthenes(segment_size)
 	limit = segment_size
 	composite = 0
-	starting_segment_value = start
-	while limit > 0:
+	starting_segment_value = segment_size + 1# since we've already find all the prime's b/w [1 - sqrt(end)] inclusive.
+	#print primes till sqrt(end) if have in range
+	for p in primes:
+		if p >= start:
+			print p
+	#find prime's greater than sqrt(end) using segmented sieve algorithm
+	while limit >= 0:
 		segment = [True] * segment_size
 		for prime in primes:
-			composite = (starting_segment_value // prime) * prime 
+			composite = (starting_segment_value // prime) * prime #find composite
+			if composite < starting_segment_value:
+				composite += prime
+			for distance in range(composite - starting_segment_value, segment_size, prime):
+					if segment[distance] == True:
+							segment[distance] = False
+			#print primes
+		for p in range(len(segment)):
+			if segment[p] == True and (p + starting_segment_value) <= end:
+				print p + starting_segment_value
+		starting_segment_value += segment_size
+		limit -= 1	
+
+
 			
 	
 def run():
