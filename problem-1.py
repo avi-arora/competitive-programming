@@ -53,6 +53,7 @@ def SieveOfEratosthenes(n):
 	   Take advantage of sieve of eratosthenes algorithm
 	   n:	upper bound starting from 2 to n
 	"""
+	n += 1
 	numbers = [True] * n
 	for i in range(0,int(sqrt(n))):
 			if numbers[i] == True:
@@ -70,26 +71,17 @@ def SegmentedSOE(start, end):
 	   SC: sqrt(n)
 	"""
 	#Get the primes till sqrt(end) + 1 using SOE
-	primes = SieveOfEratosthenes(int(sqrt(end)) + 1)
-	segment = [True] * (end - start)
+	segment_size = int(sqrt(end))
+	primes = SieveOfEratosthenes(segment_size + 1)
+	limit = segment_size
 	composite = 0
-	for prime in primes:
-		#compute value from where we start crossing non-primes.
-		composite = (start // prime) * prime
-		#cross of every non-prime starting from composite
-		for distance in [p for p in range(composite - start, end - start, prime) if p >= 0]:
-		 	if segment[distance] == True:
-		 	 	segment[distance] = False # mark off non-primes to false
-	primes = [i+start for i in range(0,end - start) if segment[i] == True]
-	return primes	
-def print_primes(start, end):
-	"""Prints primes between start to end
-	   uses SOE and segmented SOE
-	   start: lower bound >= 1
-	   end: upper bound <= 10^9
-	"""
-	primes = []
-		
+	starting_segment_value = start
+	while limit > 0:
+		segment = [True] * segment_size
+		for prime in primes:
+			composite = (starting_segment_value // prime) * prime 
+			
+	
 def run():
 		testcases = input()
 		assert testcases <= 10, "No: of test cases must be <= 10"
