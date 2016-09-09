@@ -92,24 +92,23 @@ def SegmentedSOE(start, end):
 							segment[distance] = False
 			#print primes
 		for p in range(len(segment)):
-			if segment[p] == True and (p + starting_segment_value) <= end:
+			if all([ segment[p] == True, (p + starting_segment_value) <= end ,(p + starting_segment_value) >= start ]):
 				print p + starting_segment_value
 		starting_segment_value += segment_size
 		limit -= 1	
-
-
-			
-	
 def run():
-		testcases = input()
+		testcases = input("Input:\n")
 		assert testcases <= 10, "No: of test cases must be <= 10"
 		inputs = []
 		for i in range(0,testcases):
-			inputs += [map(int, raw_input().split())]
-				
-
-
-
+			m , n = map(int, raw_input().split())
+			assert all([ m >= 1, n >= m, n <= 1000000000, n - m <= 100000 ]), "Test Case Error."
+			inputs += [[m, n]]
+		print "\nOutput:"
+		for i in inputs:
+			SegmentedSOE(i[0], i[1])
+		print 
+run()
 	
 
 
