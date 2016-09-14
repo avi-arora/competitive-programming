@@ -70,46 +70,48 @@ def SegmentedSOE(start, end):
 	   TC: O(n log log n),
 	   SC: sqrt(n)
 	"""
-	#Get the primes till sqrt(end) + 1 using SOE
+	#Get the primes till sqrt(end) using SOE
 	segment_size = int(sqrt(end))
 	primes = SieveOfEratosthenes(segment_size)
-	limit = segment_size
-	composite = 0
-	starting_segment_value = segment_size + 1# since we've already find all the prime's b/w [1 - sqrt(end)] inclusive.
-	#print primes till sqrt(end) if have in range
-	for p in primes:
-		if p >= start:
-			print p
-	#find prime's greater than sqrt(end) using segmented sieve algorithm
-	while limit >= 0:
-		segment = [True] * segment_size
+	#print the obvious primes if falls into range
+	if start <= segment_size:
 		for prime in primes:
-			composite = (starting_segment_value // prime) * prime #find composite
-			if composite < starting_segment_value:
-				composite += prime
-			for distance in range(composite - starting_segment_value, segment_size, prime):
-					if segment[distance] == True:
-							segment[distance] = False
-			#print primes
-		for p in range(len(segment)):
-			if all([ segment[p] == True, (p + starting_segment_value) <= end ,(p + starting_segment_value) >= start ]):
-				print p + starting_segment_value
-		starting_segment_value += segment_size
-		limit -= 1	
+			if prime >= start:
+				print prime
+	#remove 2 in prime's list as we are sieving upon odds numerals
+	#no factors of 2 is to be found by sieving odds numbers
+	primes.remove(2)
+	if start < segment_size:
+	 	start = primes[-1] + 2 if (primes[-1] + 1) % 2 == 0 else primes[-1] + 1
+	elif start % 2 == 0:
+		start += 1	
+	segment = range(start, start + ((segment_size * 2) - 1), 2) # Initilize the first segment
+	stop = True # tell's when to stop the algorithm, not to compute redundant prime's exceeds range
+	while stop:
+		start = segment[-1] + 2
+		for prime in primes:
+			composite = (segment[0] // prime) * prime 
+			composite = composite + prime if composite < segment[0] else composite 
+			for i in range(composite, composite + ((segment_size * 2) - 1), prime):
+				if i in segment:
+					segment.remove(i)
+		#what's left in segment are prime's, print and update
+		for p in segment:
+			if p > end:
+				stop = False 
+				break
+			print p
+		segment = range(start, start + ((segment_size * 2) - 1), 2)
+	print # for new line
 def run():
-		testcases = input("Input:\n")
+		testcases = input()
 		assert testcases <= 10, "No: of test cases must be <= 10"
 		inputs = []
 		for i in range(0,testcases):
 			m , n = map(int, raw_input().split())
 			assert all([ m >= 1, n >= m, n <= 1000000000, n - m <= 100000 ]), "Test Case Error."
 			inputs += [[m, n]]
-		print "\nOutput:"
 		for i in inputs:
 			SegmentedSOE(i[0], i[1])
-		print 
 run()
-	
-
-
 		
