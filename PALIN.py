@@ -42,20 +42,28 @@ def improved_palindrome(inputstr):
 				characters[center] = str(int(characters[center]) + 1)
 				return ''.join(characters)
 			else:
-				pass
+				characters[center] = '0'
+				for c in range(1, center+1):
+					if characters[center - c] < '9':
+						characters[center - c] = characters[center + c] = str(int(characters[center + c]) + 1)
+						return ''.join(characters)
+					characters[center - c] = characters[center + c] = '0'
+				characters[-1] = '1'
+				return '1' + ''.join(characters)
 		else:
 			if characters[center] < '9' and characters[center - 1] < '9':
 				characters[center] = str(int(characters[center]) + 1)
 				characters[center-1] = str(int(characters[center-1]) + 1)
 				return ''.join(characters)
 			else:
-				pass
+				for c in range(0,center+1):
+					if characters[center + c] < '9':
+						characters[center + c] = characters[center - c - 1] = str(int(characters[center + c]) + 1)
+						return ''.join(characters)
+					characters[center + c] = characters[center - c - 1] = '0'
+					characters[-1] = '1'
+				return '1' + ''.join(characters)
 
-					
-		
-		
-
-	
 def run():
 	total_cases = input()
 	cases = []
