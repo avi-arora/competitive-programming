@@ -26,10 +26,11 @@ def imporved_palindrome(inputstr):
 	stop = len(characters) // 2
 	first = 0
 	last = -1
-	while first < stop: # mirroring
-		if characters[first] != characters[last]:
-			characters[last] = characters[first]
-		first += 1; last -= 1
+	if inputstr != inputstr[::-1]: #if number is not palindrome.
+		while first < stop: #make the number palindrome by mirroring
+			if characters[first] != characters[last]:
+				characters[last] = characters[first]
+			first += 1; last -= 1
 	
 	#if palindrome is bigger than inputstr, return it
 	palindrome = ''.join(characters)
