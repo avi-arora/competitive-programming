@@ -19,15 +19,15 @@ def next_palindrome_brute_force(number):
 			number += 1
 			if number == int(str(number)[::-1]):
 				return number
-def imporved_palindrome(inputstr):
+def improved_palindrome(inputstr):
 	characters = []
 	for char in inputstr:
 		characters += [char]
-	stop = len(characters) // 2
+	center = len(characters) // 2
 	first = 0
 	last = -1
 	if inputstr != inputstr[::-1]: #if number is not palindrome.
-		while first < stop: #make the number palindrome by mirroring
+		while first < center: #make the number palindrome by mirroring
 			if characters[first] != characters[last]:
 				characters[last] = characters[first]
 			first += 1; last -= 1
@@ -37,7 +37,21 @@ def imporved_palindrome(inputstr):
 	if palindrome > inputstr:
 		return palindrome
 	else:
-		return 0
+		if len(inputstr) % 2 != 0:
+			if characters[center] < '9':
+				characters[center] = str(int(characters[center]) + 1)
+				return ''.join(characters)
+			else:
+				pass
+		else:
+			if characters[center] < '9' and characters[center - 1] < '9':
+				characters[center] = str(int(characters[center]) + 1)
+				characters[center-1] = str(int(characters[center-1]) + 1)
+				return ''.join(characters)
+			else:
+				pass
+
+					
 		
 		
 
