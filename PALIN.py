@@ -63,10 +63,13 @@ def improved_palindrome(inputstr):
 					characters[center + c] = characters[center - c - 1] = '0'
 					characters[-1] = '1'
 				return '1' + ''.join(characters)
-
 def run():
 	total_cases = input()
 	cases = []
 	for x in range(0, total_cases):
-		cases += [input()]
+		cases += [raw_input()]
+	for c in cases:
+		print int(improved_palindrome(c))
+	return 0
+run()
 	
