@@ -65,11 +65,7 @@ def improved_palindrome(inputstr):
 				return '1' + ''.join(characters)
 def run():
 	total_cases = input()
-	cases = []
-	for x in range(0, total_cases):
-		cases += [raw_input()]
-	for c in cases:
-		print int(improved_palindrome(c))
-	return 0
+	for _ in range(total_cases):
+		print int(improved_palindrome(raw_input()))
 run()
 	
