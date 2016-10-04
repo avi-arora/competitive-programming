@@ -55,39 +55,37 @@ def improved_palindrome(inputstr):
 			right = inputstr[center + 1:]
 	palindrome = left + middle + right
 	if palindrome > inputstr:
-		return palindrome
-	if length % 2 == 0:
+		print palindrome
+	elif length % 2 == 0:
 		if middle[0] < '9':
 			middle = str(int(middle[0]) + 1) * 2
 			palindrome = left + middle + right
-			return palindrome
+			print palindrome
 		else:
 			middle = '0' * 2
 			right = increment(right)
 			left = right[::-1]
 			palindrome = left + middle + right
 			if palindrome == '0' * length:
-				return '1' + palindrome[:length - 1] + '1'
+				print '1' + palindrome[:length - 1] + '1'
 			else:
-				return palindrome
+				print palindrome
 	else:
 		if middle < '9':
 			middle = str(int(middle) + 1)
 			palindrome = left + middle + right
-			return palindrome
+			print palindrome
 		else:
 			middle = '0'
 			right = increment(right)
 			left = right[::-1]
 			palindrome = left + middle + right
 			if palindrome == '0' * length:
-				return '1' + palindrome[:length - 1] + '1'
+				print '1' + palindrome[:length - 1] + '1'
 			else:
-				return palindrome
-
-
+				print palindrome
 def run():
 	total_cases = input()
 	for _ in range(total_cases):
 		improved_palindrome(raw_input())
-	
+run()	
