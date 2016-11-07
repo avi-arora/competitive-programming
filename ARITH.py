@@ -61,13 +61,77 @@ def add(num1, num2):
 	elif l1 > l2:
 		result += str(int(num1[l2]) + carry) + num1[l2+1:]
 
-	print result[::-1]
+	return result	
 
 def sub(num1, num2):
 	result = ""
 	borrow, partial = 0, 0
 	num1, num2 = num1[::-1], num2[::-1]
-	
+	l1, l2 = len(num1), len(num2)
+	i = 0
+	while i < min(l1,l2):
+		if num1[i] >= num2[i]:
+			result += str(int(num1[i]) - int(num2[i]))
+		else:
+			x = i+1
+			while num1[x] < '1':
+				x += 1
+			tempnum1 += '0'
+			for z in range(i+1, x):
+				tempnum1 += '9'
+			result += int('1'+ num1[i]) - int(num2[i])
+			tempnum1 += str(int(num1[x]) - 1) + num1[x+1:]
+			num1 = tempnum1
+		i += 1
+	if l1 > l2:
+		result += num1[(l1-l2)+1:]
+
+	print result[::-1]
+
+def add_from_start(num1, num2):
+	l1, l2 = len(num1), len(num2)
+	result = ""
+	carry, partial = 0, 0
+	for (n1, n2) in zip(num1, num2):
+		partial = int(n1) + int(n2) + carry
+		if partial < 10:
+			result += str(partial)
+			carry = 0
+		else:
+			carry = partial // 10
+			result += str(partial % 10)
+
+	return result
+
+def multiply(num1, num2):
+	num1, num2 = num1[::-1], num2[::-1]
+	l1, l2 = len(num1), len(num2)
+	result1 = ""
+	finalresult = ""
+	carry , partial = 0, 0
+	for n in range(len(num1)):
+		partial = int(num1[n]) * int(num2[0]) + carry
+		carry = partial // 10
+		result1 += str(partial % 10)
+	if l2 > 1:
+		result2 = ""
+		carry = partial = 0
+		displacement = 0
+		for number in range(1,len(num2)):
+			for n in range(len(num1)):
+				partial = int(num1[n]) * int(num2[number]) + carry
+				carry = partial // 10
+				result2 += str(partial % 10)
+			displacement += 1
+			result2 = '0' * displacement + result2
+			result1 = result1 + '0' * ((displacement + l2) - l1)
+			result1 = add_from_start(result1, result2)
+			result2 = ""
+	print result1[::-1]		
+
+
+			
+
 
 
 		
