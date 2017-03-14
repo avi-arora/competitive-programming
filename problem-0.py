@@ -12,7 +12,7 @@
 """
 num = 0
 while True:
-	num = input()
+	num = int(input())
 	if num == 42:
 		break
 	print(num)
