@@ -10,9 +10,9 @@ int main(int argc, char const *argv[])
 	float a_yy = a_y + a_h;
 	float b_xx = b_x + b_w;
 	float b_yy = b_y + b_h;
-	if (a_x <= b_xx && b_x <= a_xx && a_y <= b_yy && b_y <= a_yy)
+	if (a_x < b_xx && b_x < a_xx && a_y < b_yy && b_y < a_yy)
 	{
-	
+		//collisio
 		if (a_xx < b_xx)
 		{
 			area = (a_xx - b_x) * (a_yy - b_y);
