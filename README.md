@@ -23,6 +23,8 @@
 ### Codechef
 | Name | Status | Lang | Level |
 | ------- | -------- | ----- | ---- | 
+| [PALIN](https://www.codechef.com/problems/PALIN) | [Solved]() | Python3 | Medium | 
+| [ONP](https://www.codechef.com/problems/ONP) | [Solved]() | Python3 | Beginner |
 | [CHEFAPAR](https://www.codechef.com/problems/CHEFAPAR) | [Solved](https://github.com/avi-arora/competitive-programming/blob/master/CHEFAPAR.py) | Python3 | Beginner |
 
  
