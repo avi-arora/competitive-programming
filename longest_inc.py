@@ -53,8 +53,8 @@ def LISLengthRecursive(sequence, previous, current):
 
 def LISLengthDP(sequence):
 	""" Computes the length of the longest increasing subsequence
-	    time complexity: O(2^n)
-	    space complexity: O(1)
+	    time complexity: O(n^2)
+	    space complexity: O(n)
 
 	    >>> LISLengthDP([4,3,1,5,2,6,9,12,8,15])
 	    6
