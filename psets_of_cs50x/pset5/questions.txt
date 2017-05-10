@@ -1,0 +1,76 @@
+/* *******************************************************
+   ********************************************************
+   ********SUBMITTED BY - AVISHEK ARORA       *************
+   ********************************************************
+   ******** PROBLEM SET - 5 SOLUTION          *************
+   ******** HARVARD UNIVERSITY                *************
+   ******** FALL 2013                         *************
+   ******** SUBMITTED TO PROF - DAVID J MALAN *************
+   ********************************************************
+   ********************************************************
+*/
+
+
+
+0.  The GIF ( graphics interchange format ) file type supports up to 256 differnt colors chosen from a 26-bit RBG color space . 
+    The BMP ( bitmap image ) 
+    The jpg or JPEG ( joint photography expert group ) file type supports up to 
+
+
+
+1.  Among BMP , JPEG , PNG AND GIF - only gif supports the animation.
+
+
+
+
+2.  Lossy compression is a technique to compress data in a way that no information about that particular file has been lost. The algorithms it uses are particularly known as lossless compression .  
+
+
+
+3.  JPEG is the type of lossy compression.
+
+
+4. When a file is deleted on a FAT system - two things occur .. first the first name of the file is removed from the file allocation table  .. so called the reference of the file is removered and then the memory is derived free in the file allocation table.  
+
+
+5. I simply delete the file and assumed that it is deleted .
+
+
+6. It declare the integer with specified width in totally binary format and also generate a typedef which is simply means typedefination . it also define macro with specified limits of the int's width and types. note the the width of any integer is the number of bits it takes to store a integer value.  
+
+
+7.  uint8_t , int32_t , uint32_t and uint16_t are the exact width integers . the value 8 , 16 and 32 represent the value of number of bits it takes in memory to store any variable . the u sign indicates that the type of integer is unsigend the default sign of an int is signed. suppose you want to make a program the uses only exact value of integer so you can define the value how much you want to store so that no memory will be lost in such cmputations .
+
+
+8. A BYTE only takes 1 ( one ) single byte in memory , a DWORD takes only 4 ( four ) bytes of space in memory , a LONG also takes 4 bytes of memory but it is signed whereas a DWORD is of unsigned type and a WORD takes only 2 ( two ) bytes of space in memory . 
+
+
+
+9. The first two bytes of bmp is to recoginize the file type and is 0x42 and 0x4d in hexa-decimal.  
+
+
+
+10. bfsize is the size of the overall BMP file and bisize is the size of the total pixel in bytes.
+
+
+11. If biheight is postive than it is bottom-up dib ( device independent bitmap ) and origin is lower left corner.
+
+
+12. In BITMAPINFOHEADER bibitcount is the structure variable take tell's us the color depth of the BITMAP it's always defined as 24 bit as RGB
+    is 3 bytes. 1 byte = 8 bits so bibitcount = 3 * 8 = 24 bits.
+
+
+
+13. fopen returns NULL only if the file it is opening is not opened due to some reasons like not enough memory. 
+
+
+14. The third argument in fread is always one ( 1 ) in our program because we want to read only one byte at a time from the infile. Because of the image we want to reads one pixel at a time . In some other case like in jpeg we use 512 as third argument in our fread function because we want to read a 512 byte segment from the memory.
+
+
+15. if the bi.biWidth is 3. the value of padding is 1 because each scanline must be a multiple of 4 in any condition.
+
+16. fseek is used to seek the file indicator to any desirable position.
+
+17. SEEK_CUR is argument uses in fseek function and it's work to seek the file position indicator from the current point in file.
+
+18. Milo banana dun it. 
