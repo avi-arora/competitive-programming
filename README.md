@@ -16,16 +16,25 @@
 | avishek_arora | [hackerrank](https://www.hackerrank.com/avishek_arora) |
 
 ## Programming Languages Used 
-<img src="http://www.cyberequipment.com/wp-content/uploads/2016/11/c-logo.png" height="50px" width="50px" hspace="10"><img src="https://ignite.apache.org/images/cpp.png" height="50px" width="50px" hspace="10"><img src="https://www.python.org/static/opengraph-icon-200x200.png" height="55px" width="55px" hspace="10">
+<img src="http://urbanjungle.ca/wp-content/uploads/2014/01/letter-c-logo-cloudbau.jpg" height="50px" width="50px" hspace="10"><img src="https://ignite.apache.org/images/cpp.png" height="50px" width="50px" hspace="10"><img src="https://www.python.org/static/opengraph-icon-200x200.png" height="55px" width="55px" hspace="10">
 
 ## Solved Problems 
 
 ### Codechef
 | Name | Status | Lang | Level |
 | ------- | -------- | ----- | ---- | 
-| [PALIN](https://www.codechef.com/problems/PALIN) | [Solved]() | Python3 | Medium | 
-| [ONP](https://www.codechef.com/problems/ONP) | [Solved]() | Python3 | Beginner |
-| [CHEFAPAR](https://www.codechef.com/problems/CHEFAPAR) | [Solved](https://github.com/avi-arora/competitive-programming/blob/master/CHEFAPAR.py) | Python3 | Beginner |
+| [PALIN](https://www.codechef.com/problems/PALIN)
+| [Solved](https://github.com/avi-arora/competitive-programming/blob/master/PALIN.py) | Python3 | Medium 
+| 
+| [ONP](https://www.codechef.com/problems/ONP) 
+| [Solved](https://github.com/avi-arora/competitive-programming/blob/master/ONP.py) | Python3 | Beginner 
+|
+| [CHEFAPAR](https://www.codechef.com/problems/CHEFAPAR) 
+| [Solved](https://github.com/avi-arora/competitive-programming/blob/master/CHEFAPAR.py) | Python3 | Beginner 
+|
+| [LISDIGIT](https://www.codechef.com/problems/LISDIGIT) 
+| [Solved](https://github.com/avi-arora/competitive-programming/blob/master/LISDIGIT.py) | Python3 | Beginner 
+|
 
  
 
