@@ -16,7 +16,7 @@
 | avishek_arora | [hackerrank](https://www.hackerrank.com/avishek_arora) |
 
 ## Programming Languages Used 
-<img src="https://cdn.dribbble.com/users/60166/screenshots/3000914/clogo_1x.jpg" height="50px" width="50px" hspace="10"><img src="https://ignite.apache.org/images/cpp.png" height="50px" width="50px" hspace="10"><img src="https://www.python.org/static/opengraph-icon-200x200.png" height="55px" width="55px" hspace="10">
+<img src="http://dipendrashekhawat.com/wp-content/uploads/2017/04/c-logo.png" height="50px" width="50px" hspace="10"><img src="https://ignite.apache.org/images/cpp.png" height="50px" width="50px" hspace="10"><img src="https://www.python.org/static/opengraph-icon-200x200.png" height="55px" width="55px" hspace="10">
 
 ## Solved Problems 
 
