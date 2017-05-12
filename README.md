@@ -27,6 +27,8 @@
 | [ONP](https://www.codechef.com/problems/ONP) 			 | [Solved](https://github.com/avi-arora/competitive-programming/blob/master/ONP.py) 	  | Python3 | Beginner |
 | [CHEFAPAR](https://www.codechef.com/problems/CHEFAPAR) | [Solved](https://github.com/avi-arora/competitive-programming/blob/master/CHEFAPAR.py) | Python3 | Beginner |
 | [LISDIGIT](https://www.codechef.com/problems/LISDIGIT) | [Solved](https://github.com/avi-arora/competitive-programming/blob/master/LISDIGIT.py) | Python3 | Beginner |
+| [ICPC16B](https://www.codechef.com/problems/ICPC16B)   | [Solved](https://github.com/avi-arora/competitive-programming/blob/master/ICPC16B.py)  | Python3 | Begineer | 
+
 
  
 
