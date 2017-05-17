@@ -32,14 +32,6 @@
 | [FCTRL](https://www.codechef.com/problems/FCTRL)   	 | [Solved](https://github.com/avi-arora/competitive-programming/blob/master/FCTRL.py)    | Python3 | Begineer | 
 | [SEGM01](https://www.codechef.com/problems/SEGM01)   	 | [Solved](https://github.com/avi-arora/competitive-programming/blob/master/SEGM01.py)   | Python3 | Begineer | 
 | [SIMDISH](https://www.codechef.com/problems/SIMDISH)   | [Solved](https://github.com/avi-arora/competitive-programming/blob/master/SIMDISH.py)  | Python3 | Begineer | 
-
-
-
- 
-
-
-
-
-
+| [CANDY123](https://www.codechef.com/problems/CANDY123) | [Solved](https://github.com/avi-arora/competitive-programming/blob/master/CANDY123.py) | Python3 | Begineer | 
 
 
