@@ -31,6 +31,7 @@
 | [ICPC16A](https://www.codechef.com/problems/ICPC16A)   | [Solved](https://github.com/avi-arora/competitive-programming/blob/master/ICPC16A.py)  | Python3 | Begineer | 
 | [FCTRL](https://www.codechef.com/problems/FCTRL)   	 | [Solved](https://github.com/avi-arora/competitive-programming/blob/master/FCTRL.py)    | Python3 | Begineer | 
 | [SEGM01](https://www.codechef.com/problems/SEGM01)   	 | [Solved](https://github.com/avi-arora/competitive-programming/blob/master/SEGM01.py)   | Python3 | Begineer | 
+| [SIMDISH](https://www.codechef.com/problems/SIMDISH)   | [Solved](https://github.com/avi-arora/competitive-programming/blob/master/SIMDISH.py)  | Python3 | Begineer | 
 
 
 
