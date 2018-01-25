@@ -3,7 +3,28 @@
 #####################################
 
 def Compute(minX, maxX, neurons):
-    pass
+    total_user_ids = (maxX - minX) + 1
+    NOT_SPAM, SPAM = total_user_ids // 2, total_user_ids // 2
+    if total_user_ids % 2 == 1: #no of userids have odd parity
+        if minX % 2 != 0: #starting userid is even
+            SPAM += 1
+        else:
+            NOT_SPAM += 1
+    for (weight, bias) in neurons:
+        if bias % 2 != 0: #bias is odd
+            if weight % 2 != 0:
+                NOT_SPAM, SPAM = SPAM, NOT_SPAM
+            else:
+                NOT_SPAM, SPAM = 0, total_user_ids
+        else: #bias in even
+            if weight % 2 != 0:
+                NOT_SPAM, SPAM = NOT_SPAM, SPAM
+            else:
+                NOT_SPAM, SPAM = total_user_ids, 0
+    print(NOT_SPAM, SPAM)
+
+
+
 
 def Naive(minX, maxX, neurons):
     SPAM, NOT_SPAM = 0, 0
@@ -26,7 +47,7 @@ def userInput():
         for neuron_layer in range(int(N)):
             weight, bias = input().split()
             neurons += [(int(weight), int(bias))]
-
+        Compute(int(minX), int(maxX), neurons)
 
 
 userInput()
