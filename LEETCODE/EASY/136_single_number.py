@@ -1,6 +1,9 @@
 class Solution:
     def singleNumber(self, nums) -> int:
-        pass
+        xor = 0
+        for n in nums:
+            xor ^= n
+        return xor
     
     def singleNumberUsingDict(self, nums) -> int:
         table = {}
@@ -31,3 +34,4 @@ if __name__ == "__main__":
     nums = [2,3,2,3,1,1,5,9,5]
     print(s.singleNumberUsingDict(nums))
     print(s.singleNumberUsingAry(nums))
+    print(s.singleNumber(nums))
