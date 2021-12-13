@@ -1,4 +1,10 @@
+from functools import reduce
 class Solution:
+
+    def singleNumberEfficient(self, nums) -> int:
+        return reduce(lambda x, y: x^y, nums)
+
+
     def singleNumber(self, nums) -> int:
         xor = 0
         for n in nums:
@@ -35,3 +41,4 @@ if __name__ == "__main__":
     print(s.singleNumberUsingDict(nums))
     print(s.singleNumberUsingAry(nums))
     print(s.singleNumber(nums))
+    print(s.singleNumberEfficient(nums))
