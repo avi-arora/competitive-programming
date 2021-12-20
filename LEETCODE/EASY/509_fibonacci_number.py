@@ -61,7 +61,22 @@ class Solution:
             n -= 1
         return fibNext
 
+    def fibUsingGoldenMean(self, n: int) -> int:
+        """
+        Formulae for nth fib using golden mean
+        an = [(Phi)^n - (phi)^n] / sqrt(5)
+        where Phi = (1 + sqrt(5)) / 2
+        and   phi = (1 - sqrt(5)) / 2 or -1/Phi
 
+        >>> t.fibUsingGoldenMean(2)
+        1
+        >>> t.fibUsingGoldenMean(3)
+        2
+        >>> t.fibUsingGoldenMean(4)
+        3
+        """
+        from math import sqrt
+        return (int) ((((1+sqrt(5))/2)**n - (((1-sqrt(5))/2)**n)) / sqrt(5))
 
 
 
