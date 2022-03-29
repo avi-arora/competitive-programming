@@ -1,0 +1,10 @@
+
+
+
+
+
+if __name__ == "__main__":
+    t = int(input())
+    for _ in range(t):
+        v, c, pv, pc = map(int, input().split(" "))
+
