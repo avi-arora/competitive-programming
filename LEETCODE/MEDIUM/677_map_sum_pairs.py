@@ -60,7 +60,6 @@ class MapSumEfficient:
         
         return current.val if current else 0
 
-
 # Your MapSum object will be instantiated and called as such:
 # obj = MapSum()
 # obj.insert(key,val)
