@@ -13,7 +13,7 @@ class Solution:
         
         #set the new end
         prev.next = None
-        while curr:
+        while curr and curr.next:
             nxt = curr.next
             
             #change links
@@ -21,5 +21,10 @@ class Solution:
             prev = curr
             curr = nxt 
         
+        #process last node 
+        curr.next = prev
         
-        return prev
+        return curr
+            
+            
+        
